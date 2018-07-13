@@ -16,6 +16,9 @@ public class DemoActivity extends AppCompatActivity {
     private Button button3;
     private ColorArcProgressBar bar3;
 
+    private int num;
+    private java.util.Random rNum;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,24 +30,31 @@ public class DemoActivity extends AppCompatActivity {
         bar3 = (ColorArcProgressBar) findViewById(R.id.bar3);
         button3 = (Button) findViewById(R.id.button3);
 
+
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bar1.setCurrentValues(100);
+                num = (int) (Math.random() * 100 + 1);//1到100的随机数
+                bar1.setCurrentValues(num);
             }
         });
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bar2.setCurrentValues(100);
+
+                num = (int) (Math.random() * 100 + 1);
+                bar2.setCurrentValues(num);
+                bar1.setCurrentValues(0);
             }
         });
 
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bar3.setCurrentValues(77);
+
+                num = (int) (Math.random() * 100 + 1);
+                bar3.setCurrentValues(num);
             }
         });
 
